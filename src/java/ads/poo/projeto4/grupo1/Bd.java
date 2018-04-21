@@ -22,4 +22,15 @@ public class Bd {
     public static ArrayList<Clientes> getClientesList() {
         return clientesList;
     }
-}
+    
+    private static ArrayList<Clientes> clientesTempList = new ArrayList<>();
+    public static ArrayList<Clientes> getClientesTempList() {
+        return clientesTempList;
+    }
+    
+    public static int indice;
+    public static int aux;
+    
+    }
+
+

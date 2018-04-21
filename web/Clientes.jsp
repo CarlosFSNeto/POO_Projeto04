@@ -1,7 +1,7 @@
 <%-- 
     Document   : Clientes
     Created on : 17/04/2018, 11:52:53
-    Author     : Outline
+    Author     : Fabio PecorA Lopes
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,78 +10,87 @@
 <!DOCTYPE html>
 <html>
     <%
-    if(request.getParameter("add") != null){
-        Clientes nc = new Clientes();
-        nc.setNome(request.getParameter("nome"));
-        nc.setCpf(request.getParameter("cpf"));
-        nc.setRg(request.getParameter("rg"));
-        nc.setEmail(request.getParameter("email"));
-        nc.setTelefone(request.getParameter("telefone"));
-        nc.setEndereço(request.getParameter("endereço"));
-        Bd.getClientesList().add(nc);
-        response.sendRedirect(request.getRequestURI());
-    }
-        else if (request.getParameter("remover") !=null){    
-        for(int j = 0; j<Bd.getClientesList().size(); j++)
-        if (request.getParameter("checki.value") != null){
-        int i = Integer.parseInt(request.getParameter("i"));
-        Bd.getClientesList().remove(i);
-        response.sendRedirect(request.getRequestURI());
+        if (request.getParameter("incluir") != null) {
+            response.sendRedirect("AdicionarClientes.jsp");
+        } else if (request.getParameter("alterar") != null) {
+            Bd.indice = Integer.parseInt(request.getParameter("id"));
+            Clientes nc = new Clientes();
+            nc.setNome(Bd.getClientesList().get(Bd.indice).getNome());
+            nc.setCpf(Bd.getClientesList().get(Bd.indice).getCpf());
+            nc.setRg(Bd.getClientesList().get(Bd.indice).getRg());
+            nc.setEmail(Bd.getClientesList().get(Bd.indice).getEmail());
+            nc.setTelefone(Bd.getClientesList().get(Bd.indice).getTelefone());
+            nc.setEndereço(Bd.getClientesList().get(Bd.indice).getEndereço());
+            Bd.getClientesTempList().add(nc);
+            response.sendRedirect("AlterarClientes.jsp");
+        } else if (request.getParameter("excluir") != null) {
+            int i = Integer.parseInt(request.getParameter("i"));
+            Bd.getClientesList().remove(i);
+            response.sendRedirect(request.getRequestURI());
         }
-    }
-%>
+    %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastro de Clientes</title>
+        <title>Clientes</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
     <body>
         
-        <h1>Clientes</h1>
-        <fieldset> 
-        <legend>Cadastro de Clientes</legend> 
-        <form name="addClientes">
-            <table>
-                <tr> <th align="right"> Nome : </th> <td> <input type="text" name="nome" required> </td> </tr>
-                <tr> <th align="right"> CPF : </th> <td> <input type="number" name="cpf" required> </td> </tr>
-                <tr> <th align="right"> RG : </th> <td> <input type="number" name="rg" required> </td> </tr>
-                <tr> <th align="right"> Email : </th> <td> <input type="email" name="email" required> </td> </tr>
-                <tr> <th align="right"> Telefone : </th> <td> <input type="number" name="telefone" required> </td> </tr>
-                <tr> <th align="right"> Endereço : </th> <td> <input type="text" name="endereço" required> </td> </tr>
-                <tr> <td align="right"> <input type="submit" name="add" value="Adicionar"> </form></td> 
-                <td> <form> <input type="submit" name="list" value="Listar"> </td> </tr>
-                <tr> <td align="right"> <input type="submit" name="alterar" value="Alterar"> </td> 
-                    <td> <input type="submit" name="remover" value="Remover"> </form> </td> 
-                
-                </tr>
-            </table>
-        </fieldset>
+        <div class="jumbotron">
+        <h1 class="display-4" align="center">Clientes</h1>
+        <hr class="my-4">
         
-                <table border="1">
+        <form align="center">
+            <input type="submit" name="incluir" value="Incluir Cliente" class="btn btn-primary">
+        </form>
+        </div>
+        
+         <% if (Bd.getClientesList().isEmpty()){ %>
+         <div class="jumbotron">
+            <h1 class="display-4" align="center">Cadastro de Clientes</h1> 
+            <hr class="my-4">
+            <h2 align="center">Não há nenhum cliente cadastrado!</h2>
+         </div>
+            <% } else { %>
+            
+        <div id="clientes" class="jumbotron">
+            <h1 class="display-4" align="center">Cadastro de Clientes</h1> 
+            <hr class="my-4">
+        <table class="table table-sm">
             <tr>
-                <th>Índice</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>RG</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Endereço</th>
+                <thead class="thead-dark">
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">RG</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Excluir</th>
+                <th scope="col">Alterar</th>
+        </thead>
             </tr>
-            <% for(int i = 0; i<Bd.getClientesList().size(); i++){%>
+            <% int i = 0;%>
+            <% for (i = 0; i < Bd.getClientesList().size(); i++) {%>
             <tr>
-                <td><%=i%></td>
-                <td><%= Bd.getClientesList().get(i).getNome() %></td>
-                <td><%= Bd.getClientesList().get(i).getCpf() %></td>
-                <td><%= Bd.getClientesList().get(i).getRg() %></td>
-                <td><%= Bd.getClientesList().get(i).getEmail() %></td>
-                <td><%= Bd.getClientesList().get(i).getTelefone() %></td>
-                <td><%= Bd.getClientesList().get(i).getEndereço() %></td>
+                <td><%= Bd.getClientesList().get(i).getNome()%></td>
+                <td><%= Bd.getClientesList().get(i).getCpf()%></td>
+                <td><%= Bd.getClientesList().get(i).getRg()%></td>
+                <td><%= Bd.getClientesList().get(i).getEmail()%></td>
+                <td><%= Bd.getClientesList().get(i).getTelefone()%></td>
+                <td><%= Bd.getClientesList().get(i).getEndereço()%></td>
+                <td>
+                    <form>
+                        <input type="hidden" name="i" value="<%=i%>">
+                        <input type="submit" name="excluir" value="X" class="btn btn-danger">  
                         <td>
-                            <form>
-                                <input type="hidden" name="i" value="<%=i%>">
-                                <input type="checkbox" name="checki" value="checked">  
-                            </form>
-                        </td>  
+                            <input type="hidden" name="id" value="<%=i%>">
+                            <input type="submit" name="alterar" value="Alterar" class="btn btn-warning">
+                    </form>
+                </td>  
             </tr>
             <%}%>
+        </table>
+        </div>
+        <%}%>
     </body>
 </html>

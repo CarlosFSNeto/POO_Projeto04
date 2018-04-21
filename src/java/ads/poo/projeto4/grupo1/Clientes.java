@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package ads.poo.projeto4.grupo1;
-
-/**
- *
- * @author Guiga e Companhia
- */
 public class Clientes {
     private String nome;
     private String cpf;
@@ -18,7 +13,7 @@ public class Clientes {
     private String endereço;
 
     public String getNome() {
-        return nome;
+            return nome;
     }
 
     public void setNome(String nome) {
@@ -65,6 +60,4 @@ public class Clientes {
         this.endereço = endereço;
     }
 
-   
-    
 }
