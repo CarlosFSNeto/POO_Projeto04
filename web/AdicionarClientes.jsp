@@ -42,27 +42,27 @@
 
                 <form name="addClientes">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Nome :*</label>
+                        <label for="exampleInputEmail1"> Nome:*</label>
                         <input class="form-control" type="text" name="nome" placeholder="Nome" required> 
                     </div class="form-group">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> CPF :</label>
+                        <label for="exampleInputEmail1"> CPF:</label>
                         <input class="form-control" type="text" name="cpf" placeholder="999.999.999-99" required> 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> RG :</label>
+                        <label for="exampleInputEmail1"> RG:</label>
                         <input class="form-control" type="text" name="rg" placeholder="99.999.999-9" required> 
                     </div> 
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Email :</label>
+                        <label for="exampleInputEmail1"> Email:</label>
                         <input class="form-control" type="email" name="email" placeholder="nome@email.com" required> 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Telefone :</label>
+                        <label for="exampleInputEmail1"> Telefone:</label>
                         <input class="form-control" type="text" name="telefone" placeholder="(99)999999999" required> 
                     </div>  
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Endereço :</label>
+                        <label for="exampleInputEmail1"> Endereço:</label>
                         <input class="form-control" type="text" name="endereço" placeholder="Av. Dr. Fulano, 836, Praia Grande" required> 
                     </div>
 
