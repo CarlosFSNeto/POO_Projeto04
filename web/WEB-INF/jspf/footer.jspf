@@ -1,0 +1,30 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+    <footer>
+            <div class="container">
+           <div class="row  pad-bottom" > 
+            <div class="col-md-4">
+                
+            <h4> <strong>Atalhos</strong> </h4>
+            
+            <a href= "Clientes.jsp">Clientes</a>     
+                </div>
+               <div class="col-md-4">
+                    
+                   <p><br/><br/>
+                         
+                       <a href="Fornecedores.jsp">Fornecedores</a>  
+                          
+                   </p>
+                </div>
+               <div class="col-md-4">
+                   
+                            <p><br/><br/>
+                               2018, Fatec PG - POO. Todos os direitos reservados. <br />
+                               
+                            </p>
+                    
+                </div>
+               </div>
+            </div>
+    </footer>
