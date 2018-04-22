@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
     <body>
-        
+         <%@include file="WEB-INF/jspf/menu.jspf"%><br/>
         <div class="jumbotron">
         <h1 class="display-4" align="center">Clientes</h1>
         <hr class="my-4">
@@ -92,5 +92,6 @@
         </table>
         </div>
         <%}%>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
