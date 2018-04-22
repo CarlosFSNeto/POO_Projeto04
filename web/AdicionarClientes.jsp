@@ -42,9 +42,9 @@
 
                 <form name="addClientes">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Nome:*</label>
+                        <label for="exampleInputEmail1"> Nome:</label>
                         <input class="form-control" type="text" name="nome" placeholder="Nome" required> 
-                    </div class="form-group">
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"> CPF:</label>
                         <input class="form-control" type="text" name="cpf" placeholder="999.999.999-99" required> 
