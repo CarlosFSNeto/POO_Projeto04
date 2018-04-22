@@ -35,23 +35,53 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Clientes</h1>
-        <fieldset> 
-            <legend>Cadastro de Clientes</legend> 
+        <div class="jumbotron">
+            <h1 align="center" class="display-4">Cadastro de Cliente</h1>
+            <fieldset> 
+                <legend>Adicionar Cliente</legend> 
 
-            <form name="addClientes">
-                <table>
-                    <tr> <th align="right"> Nome : </th> <td> <input type="text" name="nome" required> </td> </tr>
-                    <tr> <th align="right"> CPF : </th> <td> <input type="text" name="cpf" required> </td> </tr>
-                    <tr> <th align="right"> RG : </th> <td> <input type="text" name="rg" required> </td> </tr>
-                    <tr> <th align="right"> Email : </th> <td> <input type="text" name="email" required> </td> </tr>
-                    <tr> <th align="right"> Telefone : </th> <td> <input type="text" name="telefone" required> </td> </tr>
-                    <tr> <th align="right"> Endereço : </th> <td> <input type="text" name="endereço" required> </td> </tr>
-                    <tr> <td align="right"> <input type="submit" name="add" value="Adicionar"> </form></td> 
-                        <td> <form> <input type="submit" name="cancelar" value="Cancelar" > </td>
+                <form name="addClientes">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Nome :*</label>
+                        <input class="form-control" type="text" name="nome" placeholder="Nome" required> 
+                    </div class="form-group">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> CPF :</label>
+                        <input class="form-control" type="text" name="cpf" placeholder="999.999.999-99" required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> RG :</label>
+                        <input class="form-control" type="text" name="rg" placeholder="99.999.999-9" required> 
+                    </div> 
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Email :</label>
+                        <input class="form-control" type="email" name="email" placeholder="nome@email.com" required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Telefone :</label>
+                        <input class="form-control" type="text" name="telefone" placeholder="(99)999999999" required> 
+                    </div>  
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Endereço :</label>
+                        <input class="form-control" type="text" name="endereço" placeholder="Av. Dr. Fulano, 836, Praia Grande" required> 
+                    </div>
+
+                    <div class="form-group">
+                        <table>
+                            <tr>
+                                <td>
+                                    <input class="btn btn-success" type="submit" name="add" value="Confirmar" >
+                                </td>
                             </form>
-                </table>
-        </fieldset>        
-
+                            <form>
+                                <td>
+                                    <button class="btn btn-danger" name="cancelar" value="Cancelar" >Cancelar</button>
+                                </td>
+                            </form>
+                            </tr>
+                        </table>
+                    </div>
+    </fieldset>        
+        </div>
     </body>
 </html>

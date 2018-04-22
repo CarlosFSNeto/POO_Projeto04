@@ -32,11 +32,11 @@
     </head>
     <body>
         <div class="jumbotron">
-            <h1 align="center">Alterar</h1>
+            <h1 align="center" class="display-4">Alterar</h1>
             <fieldset> 
                 <legend>Alterar Cliente</legend> 
 
-                <form name="addClientes">
+                <form name="alterarClientes">
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Nome :</label>
                         <input class="form-control" type="text" name="nome" value="<%= Bd.getClientesList().get(Bd.indice).getNome()%>" required> 
@@ -63,13 +63,20 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col">
-                        <input class="btn btn-success" type="submit" name="alterar" value="Alterar" > 
-                        <input class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" > 
-                        </div>
-                        </form>
-                </form>
-        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input class="btn btn-success" type="submit" name="alterar" value="Confirmar" >
+                                </td>
+                            </form>
+                            <form>
+                                <td>
+                                    <button class="btn btn-danger" name="cancelar" value="Cancelar" >Cancelar</button>
+                                </td>
+                            </form>
+                            </tr>
+                        </table>
+                    </div>
     </fieldset>        
 </div>
 </body>
