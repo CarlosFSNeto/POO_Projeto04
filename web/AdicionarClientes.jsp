@@ -42,7 +42,7 @@
 
                 <form name="addClientes">
                     <div class="form-group">
-                        <p><span style="color:red">*</span> Campos Obrigatórios</p>
+                        <p><span style="color:red">*</span>Campos Obrigatórios</p>
                         <label for="exampleInputEmail1"> Nome<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="nome" placeholder="Nome" required> 
                     </div>
