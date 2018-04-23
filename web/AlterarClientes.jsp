@@ -38,27 +38,28 @@
 
                 <form name="alterarClientes">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Nome:</label>
+                        <p><span style="color:red">*</span> Campos Obrigatórios</p>
+                        <label for="exampleInputEmail1"> Nome<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="nome" value="<%= Bd.getClientesList().get(Bd.indice).getNome()%>" required> 
                     </div class="form-group">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> CPF:</label>
+                        <label for="exampleInputEmail1"> CPF<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="cpf" value="<%= Bd.getClientesList().get(Bd.indice).getCpf()%>" required> 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> RG:</label>
+                        <label for="exampleInputEmail1"> RG<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="rg" value="<%= Bd.getClientesList().get(Bd.indice).getRg()%>" required> 
                     </div> 
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Email:</label>
+                        <label for="exampleInputEmail1"> Email<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="email" value="<%= Bd.getClientesList().get(Bd.indice).getEmail()%>" required> 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Telefone:</label>
+                        <label for="exampleInputEmail1"> Telefone<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="telefone" value="<%= Bd.getClientesList().get(Bd.indice).getTelefone()%>" required> 
                     </div>  
                     <div class="form-group">
-                        <label for="exampleInputEmail1"> Endereço:</label>
+                        <label for="exampleInputEmail1"> Endereço<span style="color:red">*</span>:</label>
                         <input class="form-control" type="text" name="endereço" value="<%= Bd.getClientesList().get(Bd.indice).getEndereço()%>" required> 
                     </div>
 

@@ -35,16 +35,13 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     </head>
     <body>
-        
+         <%@include file="WEB-INF/jspf/menu.jspf"%>
         <div class="jumbotron">
         <h1 class="display-4" align="center">Clientes</h1>
-        <hr class="my-4">
-        
         <form align="center">
             <input type="submit" name="incluir" value="Incluir Cliente" class="btn btn-primary">
         </form>
         </div>
-        
          <% if (Bd.getClientesList().isEmpty()){ %>
          <div class="jumbotron">
             <h1 class="display-4" align="center">Cadastro de Clientes</h1> 
@@ -92,5 +89,6 @@
         </table>
         </div>
         <%}%>
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>

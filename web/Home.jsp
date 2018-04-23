@@ -18,59 +18,38 @@
         <title>Home</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/menu.jspf"%><br/>
+        <%@include file="WEB-INF/jspf/menu.jspf"%>
             <div class="jumbotron jumbotron-fluid" align="center" name="lista" id="lista">
-                <div class="container" style="text-align:center">
-                <h2><strong>Equipe:</strong></h2>                                                                                         <br/>
-                <div id="demo" class="carousel slide" data-ride="carousel">
-
-                  <!-- Indicators -->
-                  <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                  </ul>
-
-                  <!-- The slideshow -->
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/equipe.jpg" alt="Equipe">
-                          
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/anthony.jpg" alt="Anthony Rodrigues">
-                          <div class="carousel-caption">
-                            <h3>Anthony Rodrigues</h3>
-                            <p>Responsável pela página "Home".</p>
-                          </div>
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/carlos.jpg" alt="Carlos Ferreira">
-                          <div class="carousel-caption">
-                            <h3>Carlos Ferreira</h3>
-                            <p>Responsável pela página "Fornecedores".</p>
-                          </div>
-
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/fabio.jpg" alt="Fabio Pecora">
-                          <div class="carousel-caption">
-                            <h3>Fabio Pecora</h3>
-                            <p>Responsável pela página "Clientes".</p>
-                          </div>
-                    </div>
-                  </div>
-
-                  <!-- Left and right controls -->
-                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                  </a>
-                  <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                  </a>
-
-                </div>
-                </div>
+                <h1 class="display-4 text-primary"  align="center">Equipe</h1><br/>
+            <div class="card-deck">
+  <div class="card border-primary mb-3" >
+    <img class="card-img-top" src="img/anthony.jpg" alt="Card image cap">
+    <div class="card-body text-primary"">
+      <h5 class="card-title">Anthony</h5>
+      <hr/>
+      <p class="card-text">Responsavél pelo menu, home e rodapé.</p>
+      <p class="card-text"><small class="text-muted">@AnthonyRod93</small></p>
+    </div>
+  </div>
+  <div class="card border-primary mb-3">
+    <img class="card-img-top" src="img/carlos.jpg" alt="Card image cap">
+    <div class="card-body text-primary"">
+      <h5 class="card-title">Carlos</h5>
+      <hr/>
+      <p class="card-text">Responsavel pelo cadastro de fornecedores.</p>
+      <p class="card-text"><small class="text-muted">@CarlosFSNeto</small></p>
+    </div>
+  </div>
+  <div class="card border-primary mb-3">
+    <img class="card-img-top" src="img/fabiolopes.png" alt="Card image cap">
+    <div class="card-body text-primary"">
+      <h5 class="card-title">Fabio</h5>
+      <hr/>
+      <p class="card-text">Responsavel pelo cadastro de clientes.</p>
+      <p class="card-text"><small class="text-muted">@Plops013</small></p>
+    </div>
+  </div>
+</div>            
             </div>
         <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
