@@ -50,24 +50,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de fornecedores</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-        <script>
-            function cancel()
-            {
-                
-            }
-        </script>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/menu.jspf"%>
         <div class="jumbotron" align="center" name="lista" id="lista" >
-        <h1>Fornecedores</h1><br/><br/>
+        <h1 class="display-4">Fornecedores</h1><br/><br/>
         
             <% if (Bd.getFornecedoresList().isEmpty()){ %>
             <h2 class="text-warning">Não há nenhum fornecedor cadastrado!</h2>
             <% } else { %>
             
-            <table class="table-striped">
+            <table class="table table-striped">
                 <tr>
                     <th>Nome</th><th>CNPJ</th><th>Razão Social</th><th>E-mail</th><th>Telefone</th><th>Endereço</th><th colspan="2"></th>
                 </tr>
@@ -82,13 +75,13 @@
                     <td>
                         <form action='Fornecedores.jsp#cadastro'>
                             <input type="hidden" name="indice" value="<%=i%>"/>
-                            <input type="submit" name="alterar" value="Alterar"/>       
+                            <input class="btn btn-warning" type="submit" name="alterar" value="Alterar"/>       
                         </form>
                     </td>
                     <td>
                         <form>    
                             <input type="hidden" name="indice" value="<%=i%>"/>
-                            <input type="submit" name="excluir" value="Excluir"/>
+                            <input class="btn btn-danger" type="submit" name="excluir" value="Excluir"/>
                         </form>
                     </td>
                     
@@ -101,23 +94,23 @@
         </div>
         <div class="jumbotron" align="center" name="cadastro" id="cadastro">
             <% if (request.getParameter("alterar")!= null) { %>
-            <h3>Alterar fornecedor</h3><br/>
+            <h3 class="display-4">Alterar fornecedor</h3><br/>
             <% } else {%>
-            <h3>Incluir novo fornecedor</h3><br/>
+            <h3 class="display-4">Incluir novo fornecedor</h3><br/>
             <%}%>
             <form action='Fornecedores.jsp'>
-            <table class="">
+            <table class="table-sm">
                 
-                <tr><td><label for="nome">Nome</label></td><td><input type="text" name="nome" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getNome():"") %>"/></td></tr>
-                <tr><td><label for="cnpj">CNPJ</label></td><td><input type="text" name="cnpj" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getCnpj():"") %>"/></td></tr>
-                <tr><td><label for="razaoSocial">Razão Social</label></td><td><input type="text" name="razaoSocial" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getRazaoSocial():"") %>"/></td></tr>
-                <tr><td><label for="email">E-mail</label></td><td><input type="text" name="email" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getEmail():"") %>"/></td></tr>
-                <tr><td><label for="telefone">Telefone</label></td><td><input type="text" name="telefone" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getTelefone():"") %>"/></td></tr>
-                <tr><td><label for="endereco">Endereço</label></td><td><input type="text" name="endereco" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getEndereco():"") %>"/></td></tr>
+                <tr><td><label for="nome">Nome</label></td><td><input required type="text" name="nome" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getNome():"") %>"/></td></tr>
+                <tr><td><label for="cnpj">CNPJ</label></td><td><input required type="number" step="1" name="cnpj" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getCnpj():"") %>"/></td></tr>
+                <tr><td><label for="razaoSocial">Razão Social</label></td><td><input required type="text" name="razaoSocial" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getRazaoSocial():"") %>"/></td></tr>
+                <tr><td><label for="email">E-mail</label></td><td><input required type="email" name="email" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getEmail():"") %>"/></td></tr>
+                <tr><td><label for="telefone">Telefone</label></td><td><input required type="text" name="telefone" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getTelefone():"") %>"/></td></tr>
+                <tr><td><label for="endereco">Endereço</label></td><td><input required type="text" name="endereco" value="<%=(alteracao?Bd.getFornecedoresList().get(index).getEndereco():"") %>"/></td></tr>
                 <tr><td colspan="2">
-                        <input type="submit" name="incluir" value='<%=(alteracao?"Confirmar dados":"Incluir")%>'/>
+                        <input class="btn btn-success" type="submit" name="incluir" value='<%=(alteracao?"Confirmar dados":"Incluir")%>'/>
                         <input type="hidden" name="index" value="<%=index%>"/>
-                        <input type='<%=(alteracao?"reset":"hidden")%>' name="cancelar" value="Desfazer alterações"/>
+                        <input class="btn btn-danger" type='<%=(alteracao?"reset":"hidden")%>' name="cancelar" value="Desfazer alterações"/>
                     </td>
                 </tr>
             
