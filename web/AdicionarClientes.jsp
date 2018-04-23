@@ -11,12 +11,12 @@
 <html>
     <%
         if (request.getParameter("add") != null) {
-            
-            for(int i = 0; i<Bd.getClientesList().size(); i++){
-            
+
+            for (int i = 0; i < Bd.getClientesList().size(); i++) {
+
             }
-            
-            Clientes nc = new Clientes(); 
+
+            Clientes nc = new Clientes();
             nc.setNome(request.getParameter("nome"));
             nc.setCpf(request.getParameter("cpf"));
             nc.setRg(request.getParameter("rg"));
@@ -73,7 +73,7 @@
                                 <td>
                                     <input class="btn btn-success" type="submit" name="add" value="Confirmar" >
                                 </td>
-                            </form>
+                                </form>
                             <form>
                                 <td>
                                     <button class="btn btn-danger" name="cancelar" value="Cancelar" >Cancelar</button>
@@ -82,7 +82,7 @@
                             </tr>
                         </table>
                     </div>
-    </fieldset>        
+            </fieldset>        
         </div>
     </body>
 </html>

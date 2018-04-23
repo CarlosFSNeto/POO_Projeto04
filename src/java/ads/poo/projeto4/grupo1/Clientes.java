@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package ads.poo.projeto4.grupo1;
+
 public class Clientes {
+
     private String nome;
     private String cpf;
     private String rg;
@@ -13,7 +15,7 @@ public class Clientes {
     private String endereço;
 
     public String getNome() {
-            return nome;
+        return nome;
     }
 
     public void setNome(String nome) {

@@ -12,25 +12,19 @@ import java.util.ArrayList;
  * @author Outline
  */
 public class Bd {
+
     private static ArrayList<Fornecedor> fornecedoresList = new ArrayList<>();
-    
+
     public static ArrayList<Fornecedor> getFornecedoresList() {
         return fornecedoresList;
     }
-    
+
     private static ArrayList<Clientes> clientesList = new ArrayList<>();
+
     public static ArrayList<Clientes> getClientesList() {
         return clientesList;
     }
-    
-    private static ArrayList<Clientes> clientesTempList = new ArrayList<>();
-    public static ArrayList<Clientes> getClientesTempList() {
-        return clientesTempList;
-    }
-    
+
     public static int indice;
-    public static int aux;
-    
-    }
 
-
+}

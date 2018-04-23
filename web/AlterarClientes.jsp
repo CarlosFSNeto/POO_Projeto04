@@ -19,7 +19,6 @@
             nc.setTelefone(request.getParameter("telefone"));
             nc.setEndereço(request.getParameter("endereço"));
             Bd.getClientesList().set(Bd.indice, nc);
-            Bd.getClientesTempList().remove(0);
             response.sendRedirect("Clientes.jsp");
         } else if (request.getParameter("cancelar") != null) {
             response.sendRedirect("Clientes.jsp");
@@ -69,7 +68,7 @@
                                 <td>
                                     <input class="btn btn-success" type="submit" name="alterar" value="Confirmar" >
                                 </td>
-                            </form>
+                                </form>
                             <form>
                                 <td>
                                     <button class="btn btn-danger" name="cancelar" value="Cancelar" >Cancelar</button>
@@ -78,7 +77,7 @@
                             </tr>
                         </table>
                     </div>
-    </fieldset>        
-</div>
-</body>
+            </fieldset>        
+        </div>
+    </body>
 </html>
