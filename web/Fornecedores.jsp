@@ -59,7 +59,7 @@
         </script>
     </head>
     <body>
-        
+        <%@include file="WEB-INF/jspf/menu.jspf"%>
         <div class="jumbotron" align="center" name="lista" id="lista" >
         <h1>Fornecedores</h1><br/><br/>
         
@@ -124,6 +124,6 @@
             </table>
             </form>
         </div>
-        
+        <%@include file="WEB-INF/jspf/footer.jspf"%>
     </body>
 </html>
